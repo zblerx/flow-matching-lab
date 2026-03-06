@@ -66,20 +66,20 @@ python sample.py --checkpoint output/TwoMoons_cond_ddim.pth --gif output/TwoMoon
 - At inference, what does each step of the flow (or diffusion) do to the samples?
 - How does the trajectory from `x_0` to `x_1` differ between Rectified Flow and DDIM?
 
-2. Conditional vs Unconditional
+#### 2. Conditional vs Unconditional
 - How does conditioning on the label affect the learned distribution?
 - Why might a conditional flow produce cleaner or more separated modes?
 
-3. Change the Model Size
+#### 3. Change the Model Size
 - Modify the MLP and observe differences in sample quality.
 
-4. Vary the Number of Steps
+#### 4. Vary the Number of Steps
 - Reduce --n_steps when sampling. How does it affect the smoothness of trajectories?
 
-5. Noise Sensitivity
+#### 5. Noise Sensitivity
 - Change the noise parameter in TwoMoons data loader. How robust is your flow to noisy data?
 
-6. Compare Rectified Flow and DDIM interpolation trajectories.
+#### 6. Compare Rectified Flow and DDIM interpolation trajectories.
 - Select a starting point `x_0` from the base distribution and its corresponding target `x_1` from the data. Then, compare the trajectory produced by the flow model to the straight-line path from `x_0` to `x_1`, for both Rectified Flow and DDIM.
 
 

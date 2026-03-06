@@ -62,7 +62,7 @@ python sample.py --checkpoint output/TwoMoons_cond_ddim.pth --gif output/TwoMoon
 
 ### 1.3 Questions
 
-1. Flow Dynamics
+#### 1. Flow Dynamics
 - At inference, what does each step of the flow (or diffusion) do to the samples?
 - How does the trajectory from `x_0` to `x_1` differ between Rectified Flow and DDIM?
 

@@ -11,7 +11,6 @@ We train a velocity field on a 2D moons dataset and visualize:
 - Generated samples
 
 
-
 python train.py
 python sample.py
 python train.py --conditional

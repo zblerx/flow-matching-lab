@@ -1,16 +1,14 @@
 # Flow Matching Lab
 
 A **minimal course + playground** for learning **generative flow models** from scratch.  
-It focuses on **explicit training loops and small experiments** instead of large frameworks to reveal how generative models work.
+It focuses on **explicit training loops and small experiments** instead of large frameworks, to reveal how generative models work.
+
+- Unconditional flows learn the data distribution without any extra information.
+- Conditional flows learn the distribution given some label.
 
 ## 1. Two Moons
 
-The Two Moons dataset is a simple 2D toy problem that lets us visualize how flow models transform a simple distribution (like a Gaussian) into a more complex one.
-
-- Unconditional flows learn the data distribution without any extra information.
-- Conditional flows learn the distribution given a label, allowing us to control which mode is sampled.
-
-### 1.1 Unconditional Flow
+### Unconditional Flow
 Run the training and sampling scripts:
 ```bash
 # Rectified Flow
@@ -35,8 +33,8 @@ python sample.py --checkpoint output/TwoMoons_ddim.pth --gif output/TwoMoons_ddi
   </tr>
 </table>
 
-### 1.2 Conditional
-We can condition the flow on the moon label (0 or 1):
+### Conditional
+
 ```bash
 # Rectified Flow
 python train.py --conditional
@@ -60,7 +58,7 @@ python sample.py --checkpoint output/TwoMoons_cond_ddim.pth --gif output/TwoMoon
   </tr>
 </table>
 
-### 1.3 Questions
+### Questions
 
 #### 1. Flow Dynamics
 - At inference, what does each step of the flow (or diffusion) do to the samples?

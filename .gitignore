@@ -176,4 +176,4 @@ cython_debug/
 
 token.txt
 push.py
-output
+output/*.pth

@@ -6,22 +6,53 @@ It focuses on **explicit training loops and small experiments** instead of large
 > ⚠️ **Private repo:** do not share. Students will work from a public version with skeleton code and Colab notebooks.
 
 ## 1. Two Moons
-
-### Rectified Flow
-
+### Unconditional
 ```bash
+# Rectified Flow
 python train.py
 python sample.py
+
+# DDIM
+python train.py --DDIM
+python sample.py --checkpoint output/TwoMoons_ddim.pth --gif output/TwoMoons_ddim.gif
 ```
 
-![Two Moons](output/TwoMoons.gif) ![Two Moons](output/TwoMoons.gif)
+<table>
+  <tr>
+    <td align="center">
+      <img src="output/TwoMoons.gif" width="300"><br>
+      <b>Rectified Flow</b>
+    </td>
+    <td align="center">
+      <img src="output/TwoMoons_ddim.gif" width="300"><br>
+      <b>DDIM</b>
+    </td>
+  </tr>
+</table>
 
+### Conditional
 ```bash
+# Rectified Flow
 python train.py --conditional
 python sample.py --checkpoint output/TwoMoons_cond.pth --gif output/TwoMoons_cond.gif
+
+# DDIM
+python train.py --conditional --DDIM
+python sample.py --checkpoint output/TwoMoons_cond_ddim.pth --gif output/TwoMoons_cond_ddim.gif
 ```
 
-![Two Moons (conditional)](output/TwoMoons_cond.gif)
+<table>
+  <tr>
+    <td align="center">
+      <img src="output/TwoMoons_cond.gif" width="300"><br>
+      <b>Rectified Flow</b>
+    </td>
+    <td align="center">
+      <img src="output/TwoMoons_cond_ddim.gif" width="300"><br>
+      <b>DDIM</b>
+    </td>
+  </tr>
+</table>
 
 
 
@@ -33,10 +64,9 @@ python sample.py --checkpoint output/TwoMoons_cond.pth --gif output/TwoMoons_con
 
 
 
-python train.py
-python sample.py
-python train.py --conditional
-python sample.py --checkpoint output/TwoMoons_cond.pth --gif output/TwoMoons_cond.gif
+
+
+
 
 python train.py --dataset "ChessBoard" --model_config '{"model" : "MLP", "h" : 512}' --lr 1e-3
 python sample.py --n_samples 50000 --model_config '{"model" : "MLP", "h" : 512}' --checkpoint output/ChessBoard.pth --gif output/ChessBoard.gif
@@ -48,10 +78,13 @@ python sample.py --n_samples 16 --model_config '{"model" : "UNet"}' --checkpoint
 python train.py --dataset "MNIST" --model_config '{"model" : "UNet"}' --lr 1e-3 --batch_size=256 --conditional
 python sample.py --n_samples 16 --model_config '{"model" : "UNet"}' --checkpoint output/MNIST_cond.pth --gif output/MNIST_cond.gif
 
-python train.py --DDIM
-python sample.py --checkpoint output/TwoMoons_ddim.pth --gif output/TwoMoons_ddim.gif
-python train.py --conditional --DDIM
-python sample.py --checkpoint output/TwoMoons_cond_ddim.pth --gif output/TwoMoons_cond_ddim.gif
+
+
+
+
+
+
+
 
 python train.py --dataset "ChessBoard" --DDIM --model_config '{"model" : "MLP", "h" : 512}' --lr 1e-3
 python sample.py --n_samples 50000 --model_config '{"model" : "MLP", "h" : 512}' --checkpoint output/ChessBoard_ddim.pth --gif output/ChessBoard_ddim.gif
